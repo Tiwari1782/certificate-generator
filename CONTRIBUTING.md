@@ -36,7 +36,7 @@ Use this format for every commit:
 feat: add certificate generation logic
 fix: resolve email timeout issue
 docs: update API documentation
-style: format code with prettier
+style: format code for readability
 refactor: restructure worker service
 test: add unit tests for email service
 
