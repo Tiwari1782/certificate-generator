@@ -39,6 +39,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+    profiles: ['worker']
     command: node workers/certificateWorker.js
     environment:
       - NODE_ENV=development
