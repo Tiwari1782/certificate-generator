@@ -1,8 +1,8 @@
 # API Documentation
 
 ## Base URL
-Local: http://localhost:4000/api
-Production: https://yourdomain.com/api
+Local: http://localhost:4000
+Production: https://yourdomain.com
 
 ## Response Format
 Every endpoint returns the same structure:
