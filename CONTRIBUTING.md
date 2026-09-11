@@ -62,7 +62,7 @@ test: add unit tests for email service
 - All conversations must be resolved before merging
 
 ## Code Style
-- Use ESLint and Prettier (configs are already in the repo)
+- Follow consistent formatting and naming conventions in your changes
 - Write comments for any logic that is not obvious
 - No hardcoded secrets or API keys ever
 
