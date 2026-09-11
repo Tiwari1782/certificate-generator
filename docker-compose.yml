@@ -5,6 +5,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+    profiles: ['frontend']
     ports:
       - '3000:3000'
     environment:
