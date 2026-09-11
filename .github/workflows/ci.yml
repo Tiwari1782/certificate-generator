@@ -45,27 +45,32 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
+        if: ${{ hashFiles('backend/package.json') != '' || hashFiles('frontend/package.json') != '' }}
         with:
           node-version: 18
-          cache: npm
 
       - name: Install backend dependencies
+        if: ${{ hashFiles('backend/package.json') != '' }}
         working-directory: ./backend
         run: npm install
 
       - name: Install frontend dependencies
+        if: ${{ hashFiles('frontend/package.json') != '' }}
         working-directory: ./frontend
         run: npm install
 
       - name: Lint backend
+        if: ${{ hashFiles('backend/package.json') != '' }}
         working-directory: ./backend
         run: npm run lint
 
       - name: Lint frontend
+        if: ${{ hashFiles('frontend/package.json') != '' }}
         working-directory: ./frontend
         run: npm run lint
 
       - name: Run backend tests
+        if: ${{ hashFiles('backend/package.json') != '' }}
         working-directory: ./backend
         env:
           NODE_ENV: test
@@ -74,6 +79,7 @@ jobs:
         run: npm run test
 
       - name: Run frontend tests
+        if: ${{ hashFiles('frontend/package.json') != '' }}
         working-directory: ./frontend
         run: npm run test
 
@@ -87,14 +93,16 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
+        if: ${{ hashFiles('frontend/package.json') != '' }}
         with:
           node-version: 18
-          cache: npm
 
       - name: Install frontend dependencies
+        if: ${{ hashFiles('frontend/package.json') != '' }}
         working-directory: ./frontend
         run: npm install
 
       - name: Build frontend
+        if: ${{ hashFiles('frontend/package.json') != '' }}
         working-directory: ./frontend
         run: npm run build
